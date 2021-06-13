@@ -7,10 +7,10 @@ struct CacheService {
     
     var favorites: [String] {
         get {
-            return UserDefaults.standard.value(forKey: "favorites") as? [String] ?? [String]()
+            return UserDefaults.standard.value(forKey: "favoriteEvents") as? [String] ?? [String]()
         }
         set(new) {
-            UserDefaults.standard.set(new, forKey: "favorites")
+            UserDefaults.standard.set(new, forKey: "favoriteEvents")
         }
     }
 }

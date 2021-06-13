@@ -84,6 +84,13 @@ class MainModuleVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = "Чего тебе хочеться?"
+        
+        if CacheService.shared.favorites.count > 0 {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Избранное", style: .plain, target: self, action: #selector(favoritesTapped(_:)))
+        } else {
+            self.navigationItem.rightBarButtonItem = nil
+        }
+
     }
 
     override func viewDidLoad() {
@@ -193,6 +200,13 @@ class MainModuleVC: UIViewController {
         if !self.speechRec.isRunning {
             self.speechRec.start()
         }
+    }
+    
+    @objc func favoritesTapped(_ sender: UIBarButtonItem) {
+        let vm = FavoritesVM()
+        let vc = FavoritesVC(viewModel: vm)
+        vc.title = "Избранное"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     private func checkPermissions() {

@@ -46,21 +46,18 @@ class CalendarCVC: UICollectionViewController {
         self.daySelected = day
         for (index, item) in self.days.enumerated() {
             if item.date == day.date {
-                self.collectionView.reloadItems(at: [IndexPath(row: index, section: 1)])
+                self.collectionView.reloadItems(at: [IndexPath(row: index, section: 0)])
             }
         }
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if section == 0 {
-            return 0
-        }
-        if section == 1 {
             return self.days.count
         }
         return 0
@@ -68,17 +65,8 @@ class CalendarCVC: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+
         if indexPath.section == 0 {
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarIconCVCell.identifier, for: indexPath) as? CalendarIconCVCell {
-//                if let day = self.daySelected {
-//                    cell.prepare(title: day.title, subtitle: day.subtitle)
-//                }
-                return cell
-            }
-        }
-        
-        if indexPath.section == 1 {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarCVCell.identifier, for: indexPath) as? CalendarCVCell {
                 let day = days[indexPath.row]
                 cell.prepare(title: day.title, subtitle: day.subtitle)
@@ -97,14 +85,10 @@ class CalendarCVC: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if indexPath.section == 0 {
-            //open calendar and selec date
-        }
-        
-        if indexPath.section == 1 {
             let day = days[indexPath.row]
             self.daySelected = day
             for (index, _) in self.days.enumerated() {
-                self.collectionView.reloadItems(at: [IndexPath(row: index, section: 1)])
+                self.collectionView.reloadItems(at: [IndexPath(row: index, section: 0)])
             }
 
             self.completionHandler?(day.date)

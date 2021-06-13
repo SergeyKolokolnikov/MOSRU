@@ -211,9 +211,7 @@ class EventTVCell: UITableViewCell {
             self.priceLabel.text = "Бесплатно"
             self.priceView.isHidden = false
         }
-        //self.priceView.isHidden = !event.free
         
-        //let date_from = self.dateFormatter.date(from: event.date_from)
         if let date_to = self.dateFormatter.date(from: event.date_to) {
             let date_to2 = dateFormatter2.string(from: date_to)
             self.subtitleLabel.text = "Открыто до \(date_to2)"
@@ -221,6 +219,8 @@ class EventTVCell: UITableViewCell {
      
         if let first = event.tags.first {
             self.tagLabel.text = "\(first.title)"
+        } else {
+            self.tagView.isHidden = true
         }
         
     }

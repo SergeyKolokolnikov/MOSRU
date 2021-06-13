@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		238418EE4A1972524C16819A /* Pods_MOSRU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 336A21BDBF77D2D1A6F712A8 /* Pods_MOSRU.framework */; };
+		530898C326769FF70040D529 /* FavoritesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530898C226769FF70040D529 /* FavoritesVM.swift */; };
+		530898C72676A0020040D529 /* FavoritesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530898C62676A0020040D529 /* FavoritesDelegate.swift */; };
+		530898CA2676A00A0040D529 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530898C92676A00A0040D529 /* FavoritesVC.swift */; };
 		535AD1182675E6B600BE7229 /* RoundShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AD1172675E6B600BE7229 /* RoundShadowView.swift */; };
 		535AD11B26760D8300BE7229 /* CalendarTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AD11A26760D8300BE7229 /* CalendarTVCell.swift */; };
 		535AD11F26760F3F00BE7229 /* CalendarCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AD11E26760F3F00BE7229 /* CalendarCVC.swift */; };
@@ -58,6 +61,9 @@
 
 /* Begin PBXFileReference section */
 		336A21BDBF77D2D1A6F712A8 /* Pods_MOSRU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MOSRU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		530898C226769FF70040D529 /* FavoritesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVM.swift; sourceTree = "<group>"; };
+		530898C62676A0020040D529 /* FavoritesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDelegate.swift; sourceTree = "<group>"; };
+		530898C92676A00A0040D529 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		535AD1172675E6B600BE7229 /* RoundShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundShadowView.swift; sourceTree = "<group>"; };
 		535AD11A26760D8300BE7229 /* CalendarTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTVCell.swift; sourceTree = "<group>"; };
 		535AD11E26760F3F00BE7229 /* CalendarCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCVC.swift; sourceTree = "<group>"; };
@@ -129,6 +135,40 @@
 				579ADE7F315F93C7DA828E36 /* Pods-MOSRU.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		530898BE26769FCF0040D529 /* FavoritesModule */ = {
+			isa = PBXGroup;
+			children = (
+				530898C126769FE20040D529 /* ViewModels */,
+				530898C026769FDC0040D529 /* Protocols */,
+				530898BF26769FD90040D529 /* UI */,
+			);
+			path = FavoritesModule;
+			sourceTree = "<group>";
+		};
+		530898BF26769FD90040D529 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				530898C92676A00A0040D529 /* FavoritesVC.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		530898C026769FDC0040D529 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				530898C62676A0020040D529 /* FavoritesDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		530898C126769FE20040D529 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				530898C226769FF70040D529 /* FavoritesVM.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		535AD11D26760F3000BE7229 /* Collections */ = {
@@ -237,6 +277,7 @@
 		53C8572B26752EF200BDFB9A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				530898BE26769FCF0040D529 /* FavoritesModule */,
 				53C8572C26752EF200BDFB9A /* DetailEventModule */,
 				53C8572D26752EF200BDFB9A /* MainModule */,
 				53C8573626752EF200BDFB9A /* FeedEventModule */,
@@ -487,14 +528,17 @@
 			files = (
 				538A9F6B26765F1100774A81 /* Extension+String.swift in Sources */,
 				53C8573B26752EF200BDFB9A /* Tag.swift in Sources */,
+				530898C326769FF70040D529 /* FavoritesVM.swift in Sources */,
 				538A9F482676446000774A81 /* BookmarkButton.swift in Sources */,
 				53C8573C26752EF200BDFB9A /* Action.swift in Sources */,
 				535AD11B26760D8300BE7229 /* CalendarTVCell.swift in Sources */,
+				530898C72676A0020040D529 /* FavoritesDelegate.swift in Sources */,
 				535AD129267614B200BE7229 /* CalendarIconCVCell.swift in Sources */,
 				53C8573A26752EF200BDFB9A /* Image.swift in Sources */,
 				53C8571026752E6E00BDFB9A /* ViewController.swift in Sources */,
 				538A9F6E2676606600774A81 /* TagsTVCell.swift in Sources */,
 				53EFD5AA267573460016FFAB /* Extension+Date.swift in Sources */,
+				530898CA2676A00A0040D529 /* FavoritesVC.swift in Sources */,
 				53C8573E26752EF200BDFB9A /* MainModuleVC.swift in Sources */,
 				53EFD5A626756DF80016FFAB /* Extension+Calendar.swift in Sources */,
 				538A9F51267650BB00774A81 /* DetailEventVC.swift in Sources */,
@@ -676,7 +720,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 765V85K33D;
 				INFOPLIST_FILE = MOSRU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -698,7 +742,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 765V85K33D;
 				INFOPLIST_FILE = MOSRU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

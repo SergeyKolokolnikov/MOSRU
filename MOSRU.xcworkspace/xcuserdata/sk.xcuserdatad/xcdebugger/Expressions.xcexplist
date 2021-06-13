@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "FavoritesVC.tableView(_:numberOfRowsInSection:):FavoritesVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.viewModel?.getCountAction() ?? 0">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainModuleVM.getItem(_:):MainModuleVM.swift">
+      </ContextState>
+      <ContextState
          contextName = "BookmarkButton.updateState():BookmarkButton.swift">
          <PersistentStrings>
             <PersistentString
@@ -12,9 +23,6 @@
       </ContextState>
       <ContextState
          contextName = "EventTVCell.prepare(_:):EventTVCell.swift">
-      </ContextState>
-      <ContextState
-         contextName = "MainModuleVM.getItem(_:):MainModuleVM.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
