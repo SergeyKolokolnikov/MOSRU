@@ -6,6 +6,5 @@ target 'MOSRU' do
   use_frameworks!
   
   pod 'Alamofire'
-  pod 'SVProgressHUD'
   pod 'SDWebImage'
 end

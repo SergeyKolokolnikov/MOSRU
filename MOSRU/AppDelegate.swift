@@ -1,6 +1,5 @@
 
 import UIKit
-import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -9,13 +8,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        //SVProgressHUD configure
-        SVProgressHUD.setDefaultStyle(.custom)
-        SVProgressHUD.setBackgroundColor(UIColor.init(white: 0, alpha: 0.9))
-        SVProgressHUD.setDefaultMaskType(.gradient)
-        SVProgressHUD.setDefaultAnimationType(.native)
-        SVProgressHUD.setForegroundColor(UIColor.white)
-
         let vm = MainModuleVM()
         let vc = MainModuleVC(viewModel: vm)
         let nc = UINavigationController(rootViewController: vc)
