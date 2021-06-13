@@ -83,7 +83,7 @@ class MainModuleVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.title = "Чего тебе хочеться?"
+        self.title = "Чего тебе хочется?"
         
         if CacheService.shared.favorites.count > 0 {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Избранное", style: .plain, target: self, action: #selector(favoritesTapped(_:)))

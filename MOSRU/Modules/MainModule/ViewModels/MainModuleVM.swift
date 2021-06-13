@@ -51,7 +51,6 @@ class MainModuleVM: MainModuleDelegate {
     
     init() {
                 
-        print("UIScreen.main.bounds.height: \(UIScreen.main.bounds.height)")
         self.actions = [Action]()
         self.actionsSpeech = [Action]()
         
@@ -60,19 +59,19 @@ class MainModuleVM: MainModuleDelegate {
         let endDay = self.dateFormatter.string(from: today.endOfDay)
         self.filter = "{\">=occurrences.date_from\":\"\(startDay)\",\"<=occurrences.date_to\":\"\(endDay)\"}"
         
-        self.actions.append(self.generateAction(title: "Научиться чему то новому и интересному", params: self.params))
+        self.actions.append(self.generateAction(title: "Научиться чему-то новому и интересному", params: self.params))
         self.actions.append(self.generateAction(title: "Насладиться культурным досугом", params: self.params))
         self.actions.append(self.generateAction(title: "Отдохнуть от суеты на свежем воздухе", params: self.params))
         self.actions.append(self.generateAction(title: "Поднять настроение активным отдыхом", params: self.params))
-        self.actions.append(self.generateAction(title: "Провести поэтический верчер с семьей", params: self.params))
+        self.actions.append(self.generateAction(title: "Провести поэтический вечер с семьей", params: self.params))
         self.actions.append(self.generateAction(title: "Покататься на велосипедах с детьми", params: self.params))
-        self.actions.append(self.generateAction(title: "Сходить на пинкин с друзьями", params: self.params))
+        self.actions.append(self.generateAction(title: "Сходить на пикник с друзьями", params: self.params))
         self.actions.append(self.generateAction(title: "Потренироваться в парке", params: self.params))
         self.actions.append(self.generateAction(title: "Попробовать себя в марафоне", params: self.params))
         self.actions.append(self.generateAction(title: "Провести время с пользой для здоровья", params: self.params))
         self.actions.append(self.generateAction(title: "Посетить спектакль", params: self.params))
         self.actions.append(self.generateAction(title: "Прикоснуться к истории", params: self.params))
-        self.actions.append(self.generateAction(title: "Познакомится с музейными экспонатами", params: self.params))
+        self.actions.append(self.generateAction(title: "Познакомиться с музейными экспонатами", params: self.params))
         self.actions.append(self.generateAction(title: "Посетить популярные достопримечательности", params: self.params))
 
         NotificationCenter.default.addObserver(forName: .updateRecognizedText, object: nil, queue: .main) {[weak self] (notification) in
