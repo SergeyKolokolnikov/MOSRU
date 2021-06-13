@@ -1,4 +1,4 @@
-# MOSRU
+# MOS.RU
 Moscow City Hack
 
 ## Задача 
