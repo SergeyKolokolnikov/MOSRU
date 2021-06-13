@@ -1,0 +1,6 @@
+framework module Pods_MOSRU {
+  umbrella header "Pods-MOSRU-umbrella.h"
+
+  export *
+  module * { export * }
+}

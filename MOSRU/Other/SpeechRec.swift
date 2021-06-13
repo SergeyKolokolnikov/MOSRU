@@ -1,0 +1,60 @@
+
+import Foundation
+import Speech
+
+class SpeechRec: NSObject {
+    var recognizedText = ""
+    var isRunning = false
+    
+    let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ru-RU")) // Use Russian
+    var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    var recognitionTask: SFSpeechRecognitionTask?
+    let audioEngine = AVAudioEngine()
+    
+    func start() {
+        SFSpeechRecognizer.requestAuthorization { status in
+            DispatchQueue.main.async {
+                self.startRecognition()
+            }
+        }
+    }
+    
+    func startRecognition() {
+        do {
+            recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+            guard let recognitionRequest = recognitionRequest else { return }
+            
+            recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest) { result, error in
+                if let result = result {
+                    self.recognizedText = result.bestTranscription.formattedString
+                    NotificationCenter.default.post(name: .updateRecognizedText, object: nil, userInfo: ["text": result.bestTranscription.formattedString])
+                }
+            }
+            
+            let recordingFormat = audioEngine.inputNode.outputFormat(forBus: 0)
+            audioEngine.inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
+                recognitionRequest.append(buffer)
+            }
+            
+            audioEngine.prepare()
+            try audioEngine.start()
+            
+            self.recognizedText = ""
+            self.isRunning = true
+        }
+        
+        catch {
+            
+        }
+    }
+    
+    func stop() {
+        audioEngine.inputNode.removeTap(onBus: 0)
+        audioEngine.stop()
+        recognitionRequest?.endAudio()
+        self.isRunning = false
+        self.recognizedText = ""
+//        NotificationCenter.default.post(name: .updateRecognizedText, object: nil, userInfo: ["text": ""])
+
+    }
+}
